@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.*;
+import java.io.PrintWriter;
 
 public class selectedstudents
 {
@@ -8,6 +9,9 @@ public class selectedstudents
    {
        String path = "C:\\Users\\aterahman\\Documents\\Result_list.csv";
        String line = "";
+       File csvfile = new File("C:\\Users\\aterahman\\Documents\\SelectedStudents_list.csv");
+       PrintWriter pw = new PrintWriter(csvfile);
+
 
 
         int i;
@@ -23,13 +27,26 @@ public class selectedstudents
                    x = Integer.parseInt(values[4]);
                }
                if (x > 0 && x <= 5) {
-                   System.out.println(values[0] + " " + values[1] + " " + values[2] + values[3] + " " + values[4]);
+                   pw.print(values[0]);
+                   pw.print(",");
+                   pw.print(values[1]);
+                   pw.print(",");
+                   pw.print(values[2]);
+                   pw.print(",");
+                   pw.print(values[3]);
+                   pw.print(",");
+                   pw.print(values[4]);
+                   pw.print("\n");
+
                }
 
+
+
            }
-           String newFileName  = "Temp" + "SelectedStudent";
-           File newFile = new File(newFileName);
-           BufferedWriter writer = new BufferedWriter(new FileWriter(newFile));
+           pw.close();
+
+
+
 
            }
 
