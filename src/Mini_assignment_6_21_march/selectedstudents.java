@@ -39,14 +39,8 @@ public class selectedstudents
                    pw.print("\n");
 
                }
-
-
-
            }
            pw.close();
-
-
-
 
            }
 
@@ -54,7 +48,7 @@ public class selectedstudents
 
        catch (FileNotFoundException e)
        {
-           e.printStackTrace();;
+           e.printStackTrace();
        }
        catch (IOException e)
        {
